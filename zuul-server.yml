@@ -2,13 +2,8 @@ server:
   port: 8080 
   
 zuul:
-  ignoredServices: '*'
-  host:
-    connect-timeout-millis: 20000
-    socket-timeout-millis: 20000
-    routes:
-      web-service: 
-        path: /users/** 
-        url: localhost:8091
-        stripPrefix: false  
-        sensitiveHeaders:
+ ignoredServices: '*'
+  routes:
+    web-service:
+      path: /users/**
+      url: http://localhost:8091
